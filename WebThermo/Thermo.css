@@ -1,0 +1,67 @@
+﻿body{
+    /* Height and width fallback for older browsers. */
+    height: 100%;
+    width: 100%;
+    /* Set the height to match that of the viewport. */
+    height: 100vh;
+    /* Set the width to match that of the viewport. */
+    width: 100vw;
+    /* Remove any browser-default margins. */
+    margin: 0;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: [graphRowStart] 1fr [graphRowEnd disprow] auto [editrow] auto [comborow] auto;
+    grid-template-columns: [graphColStart redCol] 1fr [greenCol] 1fr [graphColEnd];
+}
+*{ min-height: 0px; min-width: 0px;}
+#wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: [graphRowStart] 1fr [graphRowEnd disprow] auto [editrow] auto [comborow] auto;
+    grid-template-columns: [graphColStart redCol] 1fr [greenCol] 1fr [graphColEnd];
+}
+
+@media screen and (orientation: landscape){
+    body{
+        grid-template-rows: [graphRowStart] 1fr[ disprow] auto [editRow] auto [comborow] auto 1fr [graphRowEnd];
+        grid-template-rows: [graphRowStart] 1fr[ disprow] auto [editRow] auto [comborow] auto 1fr [graphRowEnd];
+        grid-template-columns: [graphColStart graphColEnd]75fr[redCol]15fr[greenCol]15fr;
+    }
+}
+
+.redSide {
+    color: red;
+    grid-column: redCol;
+}
+.greenSide{
+    color: teal;
+    grid-column: greenCol;
+}
+.numDisplay {
+    font-size: 25px;
+    grid-row:disprow;
+    text-align: center;
+    margin: 0;
+}
+input[type="number"]{
+    grid-row: editRow;
+}
+select{
+    grid-row: comborow;
+}
+
+.graph {
+    font-size: 50px;
+    background: green;}
+
+.graph, input[type="button"]{
+    grid-column-start: graphColStart;
+    grid-column-end: graphColEnd;
+    grid-row-start: graphRowStart;
+    grid-row-end:  graphRowEnd;
+}
+
+input[type="button"]{
+    margin: 20px;
+    font-size: 30px;
+}

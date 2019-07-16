@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <title>Thermometer App</title>
+    <link rel="stylesheet" href="Thermo.css" />
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+        <div class="graph">Graph</div>
+        <p class="numDisplay redSide"><span >Not </span>&nbsp;°F</p>
+        <p class="numDisplay greenSide"><span >Connected</span> &nbsp;°F</p>
+        <input class="redSide" type="number" min="-1" Max="400" step="1" value="-1" />
+        <input class="greenSide" type="number" min="-1" Max="400" step="1" value="-1" />
+        <input type="button" id="bluetoothConnect" value="Connect to Bluetooth" />
+        <select class="redSide">
+            <option value="-2"></option>
+            <option value="-1">No Target</option>
+            <option value="195">Break or Baked Goods (195°F)</option>
+            <option value="125">Beef: Rare (125°F)</option>
+            <option value="132">Beef: Medium Rare (132°F)</option>
+            <option value="137">Beef: Medium (137°F)</option>
+            <option value="145">Beef: Medium Well (145°F)</option>
+            <option value="155">Beef: Well Done (155°F)</option>
+            <option value="160">Beef: Ground (160°F)</option>
+            <option value="232">Candy: Threads (232°F)</option>
+            <option value="237">Candy: Soft Ball (237°F)</option>
+            <option value="247">Candy: Firm Ball (247°F)</option>
+            <option value="252">Candy: Hard Ball (252°F)</option>
+            <option value="280">Candy: Soft Crack (280°F)</option>
+            <option value="305">Candy: Hard Crack (305°F)</option>
+            <option value="328">Candy: Light Caramel (328°F)</option>
+            <option value="340">Candy: Dark Caramel (340°F)</option>
+            <option value="165">Chicken (165°F)</option>
+            <option value="145">Pork: Medium Rare (145°F)</option>
+            <option value="150">Pork: Medium (150°F)</option>
+            <option value="160">Pork: Well Done (160°F)</option>
+            <option value="160">Pork: Ground (160°F)</option>
+            <option value="32">Water: Freezing (32°F)</option>
+            <option value="212">Water: Boiling (212°F)</option>
+        </select>
+        <select class="greenSide">
+            <option value="-2"></option>
+            <option value="-1">No Target</option>
+            <option value="195">Break or Baked Goods (195°F)</option>
+            <option value="125">Beef: Rare (125°F)</option>
+            <option value="132">Beef: Medium Rare (132°F)</option>
+            <option value="137">Beef: Medium (137°F)</option>
+            <option value="145">Beef: Medium Well (145°F)</option>
+            <option value="155">Beef: Well Done (155°F)</option>
+            <option value="160">Beef: Ground (160°F)</option>
+            <option value="232">Candy: Threads (232°F)</option>
+            <option value="237">Candy: Soft Ball (237°F)</option>
+            <option value="247">Candy: Firm Ball (247°F)</option>
+            <option value="252">Candy: Hard Ball (252°F)</option>
+            <option value="280">Candy: Soft Crack (280°F)</option>
+            <option value="305">Candy: Hard Crack (305°F)</option>
+            <option value="328">Candy: Light Caramel (328°F)</option>
+            <option value="340">Candy: Dark Caramel (340°F)</option>
+            <option value="165">Chicken (165°F)</option>
+            <option value="145">Pork: Medium Rare (145°F)</option>
+            <option value="150">Pork: Medium (150°F)</option>
+            <option value="160">Pork: Well Done (160°F)</option>
+            <option value="160">Pork: Ground (160°F)</option>
+            <option value="32">Water: Freezing (32°F)</option>
+            <option value="212">Water: Boiling (212°F)</option>
+        </select>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="Thermo.js"></script>
+</body>
+</html>

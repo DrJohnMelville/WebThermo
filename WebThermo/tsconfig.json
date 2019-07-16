@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "paths": { "*": ["types/*"] },
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "outFile": "Thermo.js", 
+    "lib":  ["es2016", "dom"] 
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot",
+    "**/*.spec.ts"
+  ]
+}
