@@ -43,7 +43,7 @@ input[type="button"]{
 }
 input[type="number"], select{
     grid-row: 1;
-    margin: 50px;
+    margin: 5px;
 }
 
 input.greenSide {grid-column: 1}
