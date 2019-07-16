@@ -62,8 +62,8 @@ class GraphDriver {
     isvalidTemp(temp: number) { return temp <= 626; }
 
     addVerifiedTemp(timeStamp: Date, greenTemp: number, redTemp: number) {
-        this.greenTracing.postTemperaturew(greenTemp, timeStamp, this.data);
-        this.redTracing.postTemperaturew(redTemp, timeStamp, this.data);
+        greenTemp = this.greenTracing.postTemperature(greenTemp, timeStamp, this.data);
+        redTemp = this.redTracing.postTemperature(redTemp, timeStamp, this.data);
         if (this.data === undefined) return;
         this.deletePriorTemps();
         this.data.addRows([[timeStamp, greenTemp, this.tempString(greenTemp), null, null,

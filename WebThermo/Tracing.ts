@@ -59,12 +59,12 @@ class Tracing {
         return Number.parseFloat(this.editQuery().val().toString());
     }
 
-    postTemperaturew(temp: number, timeStamp: Date, dataTable: any) {
+    postTemperature(temp: number, timeStamp: Date, dataTable: any) {
         if (temp === null) return;
-
         this.updateMaxMin(temp);
         this.rememberTemp(temp, timeStamp);
         this.addLine(dataTable, temp);
+        return temp;
     }
 
     updateMaxMin(temp: number) {
