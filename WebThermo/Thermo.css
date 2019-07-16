@@ -10,58 +10,43 @@
     margin: 0;
     display: grid;
     grid-gap: 10px;
-    grid-template-rows: [graphRowStart] 1fr [graphRowEnd disprow] auto [editrow] auto [comborow] auto;
-    grid-template-columns: [graphColStart redCol] 1fr [greenCol] 1fr [graphColEnd];
-}
-*{ min-height: 0px; min-width: 0px;}
-#wrapper{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-rows: [graphRowStart] 1fr [graphRowEnd disprow] auto [editrow] auto [comborow] auto;
-    grid-template-columns: [graphColStart redCol] 1fr [greenCol] 1fr [graphColEnd];
+    grid-template-rows: 30px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-@media screen and (orientation: landscape){
-    body{
-        grid-template-rows: [graphRowStart] 1fr[ disprow] auto [editRow] auto [comborow] auto 1fr [graphRowEnd];
-        grid-template-rows: [graphRowStart] 1fr[ disprow] auto [editRow] auto [comborow] auto 1fr [graphRowEnd];
-        grid-template-columns: [graphColStart graphColEnd]75fr[redCol]15fr[greenCol]15fr;
-    }
-}
+*{ min-height: 0px; min-width: 0px;}
 
 .redSide {
     color: red;
-    grid-column: redCol;
 }
 .greenSide{
     color: teal;
-    grid-column: greenCol;
 }
 .numDisplay {
     font-size: 25px;
-    grid-row:disprow;
     text-align: center;
     margin: 0;
 }
-input[type="number"]{
-    grid-row: editRow;
-}
-select{
-    grid-row: comborow;
-}
 
 .graph {
-    font-size: 50px;
-    background: green;}
+    font-size: 50px;}
 
 .graph, input[type="button"]{
-    grid-column-start: graphColStart;
-    grid-column-end: graphColEnd;
-    grid-row-start: graphRowStart;
-    grid-row-end:  graphRowEnd;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 2;
 }
 
 input[type="button"]{
     margin: 20px;
     font-size: 30px;
 }
+input[type="number"], select{
+    grid-row: 1;
+    margin: 50px;
+}
+
+input.greenSide {grid-column: 1}
+select.greenSide {grid-column: 2}
+input.redSide {grid-column: 3}
+select.redSide {grid-column: 4}

@@ -9,14 +9,12 @@
 </head>
 <body>
         <div class="graph">Graph</div>
-        <p class="numDisplay redSide"><span >Not </span>&nbsp;°F</p>
-        <p class="numDisplay greenSide"><span >Connected</span> &nbsp;°F</p>
         <input class="redSide" type="number" min="-1" Max="400" step="1" value="-1" />
         <input class="greenSide" type="number" min="-1" Max="400" step="1" value="-1" />
         <input type="button" id="bluetoothConnect" value="Connect to Bluetooth" />
         <select class="redSide">
             <option value="-2"></option>
-            <option value="-1">No Target</option>
+            <option value="-1" selected="selected">No Target</option>
             <option value="195">Break or Baked Goods (195°F)</option>
             <option value="125">Beef: Rare (125°F)</option>
             <option value="132">Beef: Medium Rare (132°F)</option>
@@ -42,7 +40,7 @@
         </select>
         <select class="greenSide">
             <option value="-2"></option>
-            <option value="-1">No Target</option>
+            <option value="-1" selected="selected">No Target</option>
             <option value="195">Break or Baked Goods (195°F)</option>
             <option value="125">Beef: Rare (125°F)</option>
             <option value="132">Beef: Medium Rare (132°F)</option>

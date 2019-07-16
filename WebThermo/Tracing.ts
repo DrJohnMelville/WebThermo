@@ -20,7 +20,6 @@ class AudioAlarm {
 
 class Tracing {
     side: string;
-    output: any;
     data: Measurement[];
     baseTime: number;
     regressionColumn: number;
@@ -31,7 +30,6 @@ class Tracing {
 
     constructor(side: string, regressionRow: number, regressionColumn: number) {
         this.side = side;
-        this.output = $(side + ".numDisplay > span")[0];
         this.data = [];
         this.regressionRow = regressionRow;
         this.regressionColumn = regressionColumn;
@@ -47,6 +45,7 @@ class Tracing {
     editQuery() {
         return $("input" + this.side);
     }
+
     editChanged() {
         this.selecctQuery().val(-2);
     }
@@ -55,21 +54,17 @@ class Tracing {
         this.editQuery().val(this.selecctQuery().val());
     }
 
+
     targetTemp() {
         return Number.parseFloat(this.editQuery().val().toString());
     }
 
     postTemperaturew(temp: number, timeStamp: Date, dataTable: any) {
-        if (temp === null) {
-            $(this.side).hide();
-        } else {
-            this.updateMaxMin(temp);
-            $(this.side).show();
-            this.output.innerText = Math.round(temp);
-            this.output.innerText = Math.round(temp);
-            this.rememberTemp(temp, timeStamp);
-            this.addLine(dataTable, timeStamp, temp);
-        }
+        if (temp === null) return;
+
+        this.updateMaxMin(temp);
+        this.rememberTemp(temp, timeStamp);
+        this.addLine(dataTable, temp);
     }
 
     updateMaxMin(temp: number) {
@@ -84,7 +79,7 @@ class Tracing {
         this.data.push(new Measurement(temp, timeStamp));
     }
 
-    addLine(dataTable, timeStamp: Date, temp:number) {
+    addLine(dataTable, temp:number) {
         var reg = new Regression();
         for (let elt of this.data) {
             reg.addPoint(elt.timeStamp.getTime() - this.baseTime, elt.tempInF);
