@@ -23,7 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,12 +80,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alarm.mp3" />
+    <Content Include="favicon.ico" />
     <Content Include="Images\icon.svg" />
     <Content Include="Images\icons-192.png" />
     <Content Include="Images\icons-512.png" />
     <Content Include="index.html" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ServiceWorker.js" />
     <Content Include="Thermo.css" />
     <Content Include="web.config" />
     <Content Include="tsconfig.json" />
